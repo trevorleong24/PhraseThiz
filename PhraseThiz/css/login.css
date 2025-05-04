@@ -1,0 +1,302 @@
+/* Add this at the top of the file */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Left Section */
+.left-section {
+    flex: 1;
+    background: linear-gradient(135deg, #6bbcff, #d8e7f3);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 40px 20px;
+}
+
+.left-section h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: left;
+    line-height: 1.5;
+    margin-top: 20px;
+    padding-left: 40px;
+}
+
+/* Add new style for the bottom text */
+.left-section .brand-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    align-self: flex-start;
+    padding-left: 40px;
+}
+
+/* Right Section */
+.right-section {
+    flex: 1;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Tab Container */
+.tab-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab-container a {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #444;
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.tab-container a:hover {
+    color: #6bbcff;
+}
+
+.tab-container a.active {
+    border-bottom: 3px solid #6bbcff;
+    color: #6bbcff;
+}
+
+/* Forms and Containers */
+.form-container,
+.signup-container,
+.student-signup,
+.instructor-signup {
+    width: 80%;
+    max-width: 450px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.form-container.active,
+.signup-container.active,
+.student-signup.active,
+.instructor-signup.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-container label,
+.student-signup label,
+.instructor-signup label {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+}
+
+.form-container input,
+.student-signup input,
+.instructor-signup input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.form-container input:focus,
+.student-signup input:focus,
+.instructor-signup input:focus {
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.form-container button,
+.signup-container button,
+.student-signup button,
+.instructor-signup button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #6bbcff, #6bbcff);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.3s;
+}
+
+.form-container button:hover,
+.signup-container button:hover,
+.student-signup button:hover,
+.instructor-signup button:hover {
+    background: #004e8a;
+    transform: scale(1.05);
+}
+
+/* Role Selection */
+.role-selection {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.role {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 45%;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.role img {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.role:hover {
+    background-color: #d8e7f3;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.role.active {
+    border-color: #6bbcff;
+    background-color: #e3f3ff;
+}
+
+/* Footer */
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-footer a {
+    text-decoration: none;
+    color: #6bbcff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+    color: #004e8a;
+}
+
+/* Checkbox Styling */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Add this to your CSS file */
+.close-icon {
+    position: absolute; /* Position it at the top right */
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    font-size: 24px; /* Size of the icon */
+    text-decoration: none; /* Remove underline */
+    color: black; /* Color of the icon */
+}
+
+.close-icon:hover {
+    color: red; /* Change color on hover */
+}
